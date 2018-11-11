@@ -1,0 +1,31 @@
+<body>
+    <h1>Starting Strength</h1>
+    <h2>Workout Tracker</h2>
+    <h3>{{ user_name }}</h3>
+
+    <!--block to diaplay last 3 workouts-->
+    <h2>Your Last Three Workouts:</h2>
+    {% if last_three_workouts %}
+        <ul>
+        {% for workout in last_three_workouts %}
+            <li>{{ workout.squat }} {{ workout.press }} {{ workout.bench }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No workouts logged yet</p>
+    {% endif %}
+
+    <!--block to display next scheduled workout-->
+    <h2>Next Workout</h2>
+
+    {{ next_workout.squat }} {{ next_workout.press }} {{ next_workout.bench }}
+
+    <!--block to log and rate today's workout-->
+</body>
+
+
+<style>
+    body {
+        text-align: center;
+    }
+</style>
